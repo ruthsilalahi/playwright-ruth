@@ -1,20 +1,20 @@
 import {test, expect} from '@playwright/test';
 
-// test.use({ storageState: 'auth.json'});
+test.use({ storageState: 'auth.json'});
 
 test('E2E', async ({page}) => {
     await page.goto('https://www.saucedemo.com/inventory.html');
 
-    // const inputUsername = page.locator('#user-name');
-    // await inputUsername.fill('standard_user');
-    // await expect(inputUsername).toHaveValue('standard_user');
+    const inputUsername = page.locator('#user-name');
+    await inputUsername.fill('standard_user');
+    await expect(inputUsername).toHaveValue('standard_user');
 
-    // const inputPassword = page.locator("#password");
-    // await inputPassword.fill('secret_sauce');
-    // await expect(inputPassword).toHaveValue('secret_sauce');
+    const inputPassword = page.locator("#password");
+    await inputPassword.fill('secret_sauce');
+    await expect(inputPassword).toHaveValue('secret_sauce');
 
-    // const buttonLogin = page.locator('#login-button');
-    // await buttonLogin.click();
+    const buttonLogin = page.locator('#login-button');
+    await buttonLogin.click();
 
     const addtocart = page.locator('#add-to-cart-sauce-labs-backpack');
     await addtocart.click();
